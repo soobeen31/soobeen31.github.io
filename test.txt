@@ -1,10 +1,8 @@
 swagger: '2.0'
-encoding: 'utf-8'
 info:
-  version: '2.0'
   description: MCS API
   title: One MCS
-host: '192.168.0.52:3030'
+host: 'localhost:3030'
 basePath: /
 tags:
   - name: alarm-rpt-controller
@@ -14740,6 +14738,8 @@ paths:
       responses:
         '200':
           description: OK
+          schema:
+            $ref: '#/definitions/Page«EditDataPreview»'
         '401':
           description: Unauthorized
         '403':
@@ -15976,7 +15976,7 @@ paths:
           in: query
           description: id
           required: false
-          type: string
+          type: object
       responses:
         '200':
           description: OK
@@ -16179,7 +16179,7 @@ paths:
           in: query
           description: id
           required: false
-          type: string
+          type: object
       responses:
         '200':
           description: OK
@@ -47175,17 +47175,15 @@ paths:
     get:
       tags:
         - basic-error-controller
-      summary: error
-      operationId: errorUsingGET
+      summary: errorHtml
+      operationId: errorHtmlUsingGET
       produces:
-        - '*/*'
+        - text/html
       responses:
         '200':
           description: OK
           schema:
-            type: object
-            additionalProperties:
-              type: object
+            $ref: '#/definitions/ModelAndView'
         '401':
           description: Unauthorized
         '403':
@@ -47195,19 +47193,17 @@ paths:
     head:
       tags:
         - basic-error-controller
-      summary: error
-      operationId: errorUsingHEAD
+      summary: errorHtml
+      operationId: errorHtmlUsingHEAD
       consumes:
         - application/json
       produces:
-        - '*/*'
+        - text/html
       responses:
         '200':
           description: OK
           schema:
-            type: object
-            additionalProperties:
-              type: object
+            $ref: '#/definitions/ModelAndView'
         '204':
           description: No Content
         '401':
@@ -47217,19 +47213,17 @@ paths:
     post:
       tags:
         - basic-error-controller
-      summary: error
-      operationId: errorUsingPOST
+      summary: errorHtml
+      operationId: errorHtmlUsingPOST
       consumes:
         - application/json
       produces:
-        - '*/*'
+        - text/html
       responses:
         '200':
           description: OK
           schema:
-            type: object
-            additionalProperties:
-              type: object
+            $ref: '#/definitions/ModelAndView'
         '201':
           description: Created
         '401':
@@ -47241,19 +47235,17 @@ paths:
     put:
       tags:
         - basic-error-controller
-      summary: error
-      operationId: errorUsingPUT
+      summary: errorHtml
+      operationId: errorHtmlUsingPUT
       consumes:
         - application/json
       produces:
-        - '*/*'
+        - text/html
       responses:
         '200':
           description: OK
           schema:
-            type: object
-            additionalProperties:
-              type: object
+            $ref: '#/definitions/ModelAndView'
         '201':
           description: Created
         '401':
@@ -47265,17 +47257,15 @@ paths:
     delete:
       tags:
         - basic-error-controller
-      summary: error
-      operationId: errorUsingDELETE
+      summary: errorHtml
+      operationId: errorHtmlUsingDELETE
       produces:
-        - '*/*'
+        - text/html
       responses:
         '200':
           description: OK
           schema:
-            type: object
-            additionalProperties:
-              type: object
+            $ref: '#/definitions/ModelAndView'
         '204':
           description: No Content
         '401':
@@ -47285,19 +47275,17 @@ paths:
     options:
       tags:
         - basic-error-controller
-      summary: error
-      operationId: errorUsingOPTIONS
+      summary: errorHtml
+      operationId: errorHtmlUsingOPTIONS
       consumes:
         - application/json
       produces:
-        - '*/*'
+        - text/html
       responses:
         '200':
           description: OK
           schema:
-            type: object
-            additionalProperties:
-              type: object
+            $ref: '#/definitions/ModelAndView'
         '204':
           description: No Content
         '401':
@@ -47307,19 +47295,17 @@ paths:
     patch:
       tags:
         - basic-error-controller
-      summary: error
-      operationId: errorUsingPATCH
+      summary: errorHtml
+      operationId: errorHtmlUsingPATCH
       consumes:
         - application/json
       produces:
-        - '*/*'
+        - text/html
       responses:
         '200':
           description: OK
           schema:
-            type: object
-            additionalProperties:
-              type: object
+            $ref: '#/definitions/ModelAndView'
         '204':
           description: No Content
         '401':
